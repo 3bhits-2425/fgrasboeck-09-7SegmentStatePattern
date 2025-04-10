@@ -25,11 +25,11 @@ public class State0 : ISevenSegmentDisplayState
     }
 
     public ISevenSegmentDisplayState CountUp() {
-        return new State1();
+        return State1.GetState();
     }
 
     public ISevenSegmentDisplayState CountDown() {
-        return new State9();
+        return State9.GetState();
     }
 
 
