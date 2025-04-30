@@ -31,6 +31,30 @@ public class SevenSegmentDisplay : MonoBehaviour
         { true,  true,  true,  false, false, true,  true  }  // 9
     };
 
+    private ISevenSegmentDisplayState mySevenSegmentDisplayState = State0.GetState();
+
+        public ISevenSegmentDisplayState GetState()
+    {
+        return mySevenSegmentDisplayState;
+        //return null;
+
+    }
+
+    public bool SetState(ISevenSegmentDisplayState newState)
+    {
+        if (newState == null) return false;
+        mySevenSegmentDisplayState = newState;
+            return true;
+        
+    }
+
+    public bool UpdateDisplay()
+    {
+        // 1. Zustand hohlen
+        // Anzeige Aktualisieren
+        // Methode: ExtendSegmentsFor(int number)
+    }
+
     private void Awake()
     {
         segments = GetComponentsInChildren<SegmentMover>();
